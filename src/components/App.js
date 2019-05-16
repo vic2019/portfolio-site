@@ -7,7 +7,7 @@ import Nav from './Nav';
 
 function App() {
   return (
-    <div className="app">
+    <div id="app">
       <Home/>
       <About/>
       <Projects/>

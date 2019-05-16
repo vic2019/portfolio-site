@@ -39,7 +39,7 @@ code {
   left: 25px;
   height: 40px;
   width: 40px;
-  border: 3px solid rgba(255, 255, 255, .3);
+  border: 3px solid rgba(255, 255, 255, .4);
   border-radius: 5px;
   background-color: rgba(0, 0, 0, .05);
   z-index: 1;
@@ -56,17 +56,50 @@ code {
 #nav-icon {
   height: 30px;
   width: 30px;
-  filter: invert(100%) opacity(30%); 
+  filter: invert(100%) opacity(40%); 
 }
 
-#nav {
-  /* visibility: hidden; */
+#nav-collapsible {
   position: fixed;
-  top: 0;
-  height: 40vh;
-  min-height: 80px;
+  height: 60vh;
   width: 100%;
   background-color: #f5b041;
-  opacity: 0.95;
   z-index: 2;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: stretch;
 }
+
+#nav-collapsible div {
+  color: white;
+}
+
+.nav-cancel {
+  align-self: right;
+  flex-grow: 0;
+  text-align: right;
+  font-size: 7vh;
+  line-height: 6vh;
+  padding-right: 2vw;
+  opacity: 0.8;
+}
+
+.nav-cancel-hover:hover, .nav-option:hover {
+  cursor: pointer;
+  text-shadow: 0 0 8px rgba(255, 255, 255, .7);
+}
+
+.nav-option {
+  flex-grow: 2;
+  text-align: center;
+  font-size: 7vh;
+}
+
+@media only screen and (max-width: 425px) {
+  #nav-toggle {
+    top: 16px;
+    left: 15px;
+  }
+}
+
