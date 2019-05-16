@@ -7,33 +7,107 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body * {
+  margin: 0;
+  box-sizing: border-box;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
 #home, #about, #projects, #contact {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
 }
 
 #home {
-  background-color:    #212f3c ;
+  background-color: #1d293d ;
 }
 
 #about {
   background-color:  #e5e7e9 ;
 }
 
+#about h1 {
+  color: #498ebe;
+  margin-top: 8vh;
+}
+
+.bio-container {
+  height: 460px;
+  width: 600px;
+  max-height: 80vh;
+  max-width: 98%;
+  padding: 40px;
+  margin-top: 5vh;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  background-color: white;
+  overflow: scroll;
+  box-shadow: 0 2px 3px 0 rgb(190, 190, 200);
+}
+
+.bio-container * {
+  color: #6e6e6e;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
 #projects {
   background-color:  #5499c7 ;
+}
+
+#projects h1 {
+  color: white;
+  margin-top: 8vh;
 }
 
 #contact {
   background-color:  #154360 ;
 }
 
-#nav-toggle {
+#contact h1 {
+  color: white;
+  margin-top: 10vh;
+}
+
+.contact-form * {
+  width: 480px;
+  line-height: 35px;
+  border: none;
+  border-radius: 2px;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #dbdbdb;
+  background-color: #002e4a;
+  margin-bottom: 4px;
+}
+
+.contact-form-name {
+  margin-top: 8vh;
+
+}
+
+.contact-form-message {
+  resize: none;
+}
+
+.contact-form-btn {
+  width: 150px;
+}
+
+.contact-form-btn:hover {
+  cursor: pointer;
+  text-shadow: 0 0 8px rgba(255, 255, 255, .7);
+  background-color: #05334f;
+}
+
+.nav-toggle {
   position: fixed;
   top: 27px;
   left: 25px;
@@ -48,18 +122,18 @@ code {
   align-items: center;
 }
 
-#nav-toggle:hover {
+.nav-toggle:hover {
   cursor: pointer;
   box-shadow: 0 0 5px 1px rgba(255, 255, 255, .8);
 }
 
-#nav-icon {
+.nav-icon {
   height: 30px;
   width: 30px;
   filter: invert(100%) opacity(40%); 
 }
 
-#nav-collapsible {
+.nav-collapsible {
   position: fixed;
   height: 60vh;
   width: 100%;
@@ -71,7 +145,7 @@ code {
   align-items: stretch;
 }
 
-#nav-collapsible div {
+.nav-collapsible div {
   color: white;
 }
 
@@ -96,10 +170,31 @@ code {
   font-size: 7vh;
 }
 
-@media only screen and (max-width: 425px) {
-  #nav-toggle {
+@media only screen and (max-width: 470px) {
+  .nav-toggle {
     top: 16px;
     left: 15px;
+  }
+
+  .bio-container {
+    height: 75vh;
+    width: 98%;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .bio-container * {
+    font-size: 22px;
+  }
+
+  .contact-form * {
+    width: 300px;
+    font-size: 22px;
+  }
+
+  .contact-form-btn {
+    width: 150px;
+    font-size: 20px;
   }
 }
 

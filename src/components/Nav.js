@@ -5,18 +5,30 @@ import { useSpring, animated } from 'react-spring';
 
 function NavCollapsible ({ isOpen, toggle }) {
   const props = useSpring({
-    top: isOpen? '0vh': '-80vh' // Can't be Number 0; must be Str '0'
+    top: isOpen? '0vh': '-80vh', // Can't be Number 0; must be Str '0'
+    color: isOpen? '#ffffff': '#f5b041',
+    config: {
+      tension: 220,
+      clamp: true
+    }
   })
   
   const scrollTo = (section) => {
     return () => {
-      window.scrollTo(0, document.getElementById(section).offsetTop);
       toggle();
+      try {
+        window.scrollTo({
+          top: document.getElementById(section).offsetTop,
+          behavior: 'smooth'
+        });
+      } catch(err) {
+        window.scrollTo(0, document.getElementById(section).offsetTop);
+      }
     };
   }
 
   return (
-    <animated.div id='nav-collapsible' style={props}>
+    <animated.div className='nav-collapsible' style={props}>
       <div className='nav-cancel'>
         <span className='nav-cancel-hover' onClick={toggle}>{'\u00d7'}</span>
       </div>
@@ -40,8 +52,8 @@ function NavCollapsible ({ isOpen, toggle }) {
 function NavToggle({ toggle }) {
   
   return (
-    <div id='nav-toggle' onClick={toggle}>
-      <img id='nav-icon' src={icon} alt='Menu'/>
+    <div className='nav-toggle' onClick={toggle}>
+      <img className='nav-icon' src={icon} alt='Menu'/>
     </div>
   );
 }
