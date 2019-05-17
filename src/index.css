@@ -35,21 +35,36 @@ code {
 
 #about h1 {
   color: #498ebe;
-  margin-top: 8vh;
+  margin-top: 7vh;
+}
+
+.bio-pic-container {
+  height: 120px;
+  width: 240px;
+  border-radius: 120px 120px 0px 0px;
+  background-color: white;
+  margin-top: 4vh;
+}
+
+.bio-pic {
+  position: absolute; /* z-index only works on positioned items */
+  height: 224px;
+  width: 224px;
+  border-radius: 112px;
+  margin-top: 8px;
+  margin-left: 8px;
 }
 
 .bio-container {
-  height: 460px;
+  min-height: 500px;
   width: 600px;
-  max-height: 80vh;
   max-width: 98%;
-  padding: 40px;
-  margin-top: 5vh;
+  padding: 125px 40px 40px 40px;
   margin-bottom: 40px;
   border-radius: 10px;
   background-color: white;
   overflow: scroll;
-  box-shadow: 0 2px 3px 0 rgb(190, 190, 200);
+  /* box-shadow: 0 2px 3px 0 rgb(190, 190, 200);  Maybe not?*/ 
 }
 
 .bio-container * {
@@ -64,7 +79,7 @@ code {
 
 #projects h1 {
   color: white;
-  margin-top: 8vh;
+  margin-top: 7vh;
 }
 
 #contact {
@@ -146,16 +161,15 @@ code {
 }
 
 .nav-collapsible div {
-  color: white;
+  color: inherit;
 }
 
 .nav-cancel {
-  align-self: right;
   flex-grow: 0;
-  text-align: right;
+  text-align: left;
   font-size: 7vh;
-  line-height: 6vh;
-  padding-right: 2vw;
+  line-height: 7vh;
+  margin-left: 16px;
   opacity: 0.8;
 }
 
@@ -177,10 +191,8 @@ code {
   }
 
   .bio-container {
-    height: 75vh;
-    width: 98%;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 120px 20px 20px 20px;
+    margin-bottom: 30px;
   }
   
   .bio-container * {

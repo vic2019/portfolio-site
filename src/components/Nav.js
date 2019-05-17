@@ -5,10 +5,10 @@ import { useSpring, animated } from 'react-spring';
 
 function NavCollapsible ({ isOpen, toggle }) {
   const props = useSpring({
-    top: isOpen? '0vh': '-80vh', // Can't be Number 0; must be Str '0'
+    top: isOpen? '0vh': '-60vh', // Can't be Number 0; must be Str '0'
     color: isOpen? '#ffffff': '#f5b041',
     config: {
-      tension: 220,
+      friction: 8,
       clamp: true
     }
   })
