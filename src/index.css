@@ -35,36 +35,37 @@ code {
 
 #about h1 {
   color: #498ebe;
-  margin-top: 7vh;
+  margin-top: 5vh;
 }
 
 .bio-pic-container {
-  height: 120px;
-  width: 240px;
-  border-radius: 120px 120px 0px 0px;
+  height: 110px;
+  width: 220px;
+  border-radius: 110px 110px 0px 0px;
   background-color: white;
-  margin-top: 4vh;
+  margin-top: 3vh;
+  box-shadow: 0 2px 4px 0 rgb(190, 190, 210); 
 }
 
 .bio-pic {
   position: absolute; /* z-index only works on positioned items */
-  height: 224px;
-  width: 224px;
-  border-radius: 112px;
-  margin-top: 8px;
-  margin-left: 8px;
+  height: 208px;
+  width: 208px;
+  border-radius: 104px;
+  margin-top: 6px;
+  margin-left: 6px;
 }
 
 .bio-container {
-  min-height: 500px;
+  min-height: 450px;
   width: 600px;
   max-width: 98%;
-  padding: 125px 40px 40px 40px;
+  padding: 120px 40px 40px 40px;
   margin-bottom: 40px;
   border-radius: 10px;
   background-color: white;
   overflow: scroll;
-  /* box-shadow: 0 2px 3px 0 rgb(190, 190, 200);  Maybe not?*/ 
+  box-shadow: 0 2px 3px 0 rgb(200, 200, 220); 
 }
 
 .bio-container * {
@@ -80,6 +81,26 @@ code {
 #projects h1 {
   color: white;
   margin-top: 7vh;
+}
+
+.project-container {
+  width: 100%;
+  max-width: 1110px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4vh;
+  margin-bottom: 2vh;
+}
+
+.project-card {
+  width: 340px;
+  min-height: 540px;
+  margin: 15px;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgb(34, 103, 159);
 }
 
 #contact {
