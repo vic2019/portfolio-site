@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ProjectCard() {
+export function ProjectCard() {
   return (
     <div className='project-card'/>
   )

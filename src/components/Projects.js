@@ -1,5 +1,5 @@
 import React from 'react';
-import { projectCards } from './ProjectCards';
+import { projectCards } from './projectCards';
 
 export default function Projects() {
   return (
