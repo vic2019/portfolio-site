@@ -114,6 +114,7 @@ code {
 }
 
 .contact-form * {
+  display: block;
   width: 480px;
   line-height: 35px;
   border: none;
@@ -125,13 +126,16 @@ code {
   margin-bottom: 4px;
 }
 
+.contact-err {
+  display: none;
+  background-color: #154360;
+  color: rgb(255, 20, 40);
+  font-size: 16px !important;
+}
+
 .contact-form-name {
   margin-top: 8vh;
 
-}
-
-.contact-form-message {
-  resize: none;
 }
 
 .contact-form-btn {
