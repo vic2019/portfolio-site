@@ -33,6 +33,12 @@ export default function Contact() {
     }
   }
 
+  const handleFocus = e => {
+    const scroll = window.pageYOffset + e.target.getBoundingClientRect().top;
+    setTimeout(() => window.scrollTo(0, scroll), 0);
+      
+  }
+
   const validate = useCallback( fieldName => {
     if (fieldName === 'email') {
       const emailReg = /\S+@\S+\.\S+/;
@@ -119,6 +125,7 @@ export default function Contact() {
           placeholder=' Name'
           value={name}
           onChange={handleChange}
+          onFocus={handleFocus}
         />
         <p className='contact-err' ref={errName}>
           Please enter a name.</p>
@@ -129,6 +136,7 @@ export default function Contact() {
           placeholder=' Email or Phone'
           value={email}
           onChange={handleChange}
+          onFocus={handleFocus}
         />
         <p className='contact-err' ref={errEmail}>
           Please enter a valid email or phone number.</p>
@@ -140,6 +148,7 @@ export default function Contact() {
           rows='7'
           value={msg}
           onChange={handleChange}
+          onFocus={handleFocus}
         />
         <p className='contact-err' ref={errMsg}>
           Message cannot be empty.</p>
