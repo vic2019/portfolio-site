@@ -130,7 +130,13 @@ code {
   display: none;
   background-color: #154360;
   color: rgb(255, 20, 40);
-  font-size: 16px !important;
+  font-size: 16px;
+}
+
+.contact-sent-notice {
+  display: none;
+  background-color: #154360;
+  font-size: 16px;
 }
 
 .contact-form-name {
@@ -222,17 +228,21 @@ code {
   }
   
   .bio-container * {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .contact-form * {
     width: 300px;
-    font-size: 22px;
+    font-size: 20px;
+  }
+
+  .contact-sent-notice, .contact-err {
+    font-size: 18px;
   }
 
   .contact-form-btn {
     width: 150px;
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 

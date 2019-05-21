@@ -17,7 +17,7 @@ export default function About() {
         <p>Technologies that I’ve worked with—</p>
         <br/><ul>
           <li>Front-end: <b>HTML</b>, <b>CSS</b>, <b>Javascript</b>, <b>React</b>, <b>Redux</b>, <b>react-spring</b>, <b>Jest</b></li>
-          <li>Back-end: <b>Node.js</b>, <b>MySQL</b>, <b>AWS (Lambda, DynamoDB, CloudFront, Cognito)</b></li>
+          <li>Back-end: <b>Node.js</b>, <b>MySQL</b>, <b>AWS (Lambda, DynamoDB, CloudFront, Cognito, Simple Email Service)</b></li>
         </ul><br/>
         <p>In July 2018, I stumbled upon "<i>Automate the Boring Stuff with Python</i>" by Al Sweigart, and was immediately hooked.</p>
         <p>At the time I was working to become an attorney in California, but as I delved deeper into computer programming, my passion for coding grew until it dawned on me that I must turn this hobby into a career!</p> 

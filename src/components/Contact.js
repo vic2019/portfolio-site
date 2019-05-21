@@ -8,6 +8,7 @@ export default function Contact() {
   const errName = useRef(null);
   const errEmail = useRef(null);
   const errMsg = useRef(null);
+  const sentNotice = useRef(null);
   const initialRender = useRef({
     name: true,
     email: true,
@@ -52,7 +53,7 @@ export default function Contact() {
 
     errName.current.style.display = validate('name')? 'none': 'block';
 
-  }, [name, validate]);
+  }, [name]);
 
   useEffect(() => {
     if (initialRender.current.email) {
@@ -62,7 +63,7 @@ export default function Contact() {
 
     errEmail.current.style.display = validate('email')? 'none': 'block';
 
-  }, [email, validate]);
+  }, [email]);
 
   useEffect(() => {
     if (initialRender.current.msg) {
@@ -72,7 +73,7 @@ export default function Contact() {
 
     errMsg.current.style.display = validate('msg')? 'none': 'block';
 
-  }, [msg, validate]);
+  }, [msg]);
 
   const submit = () => {
     errName.current.style.display = validate('name')? 'none': 'block';
@@ -84,8 +85,26 @@ export default function Contact() {
       errEmail.current.style.display === 'block' ||
       errMsg.current.style.display === 'block'
     ) return;
+
+    function notifyStatus(success) {
+      sentNotice.current.style.color = success? 
+        'rgb(30, 255, 60)': 'rgb(255, 20, 40)';
+      sentNotice.current.innerHTML = success? 
+        'Message Sent!': 'An error occured. Please try again later.';
+    }
     
-    alert('submit');
+    sentNotice.current.innerHTML = 'Sending...';
+    sentNotice.current.style = 'color:white;display:block';
+
+    sendMessage({
+      name: name.trim(),
+      email: email.trim(),
+      msg: msg.trim()
+    }).then(res => {
+      notifyStatus(res.status === 200);
+    }).catch(_ => {
+      notifyStatus(false);
+    });
   }
 
   return (
@@ -130,6 +149,7 @@ export default function Contact() {
           value='Send'
           onClick={submit}
         />
+        <p className='contact-sent-notice' ref={sentNotice}/>
       </form>
     </div>
   );

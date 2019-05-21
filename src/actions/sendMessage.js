@@ -1,11 +1,6 @@
 import axios from 'axios';
+import { MESSAGE_URI } from '../config/config';
 
-const url = ''
-
-export function sendMessage({ name, email, msg }) {
-  return axios.post(url, {
-    name,
-    email,
-    msg
-  });
+export function sendMessage(body) {
+  return axios.post(MESSAGE_URI, body);
 };
