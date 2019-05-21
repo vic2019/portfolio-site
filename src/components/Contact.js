@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { sendMessage } from '../actions/sendMessage';
 
 export default function Contact() {
@@ -14,7 +14,6 @@ export default function Contact() {
     msg: true
   });
   
-
   const handleChange = e => {
     const value = e.target.value;
 
@@ -33,17 +32,17 @@ export default function Contact() {
     }
   }
 
-  const validate = fieldName => {
+  const validate = useCallback( fieldName => {
     if (fieldName === 'email') {
       const emailReg = /\S+@\S+\.\S+/;
-      const phoneReg = /1?[-\s(]*\d\d\d[-\s)]*\d\d\d[-\s]?(\s\-\s)?\d\d\d\d/;
+      const phoneReg = /1?[-\s(]*\d\d\d[-\s)]*\d\d\d[-\s]?-?\s?\d\d\d\d/;
       return email.trim().match(emailReg) || email.trim().match(phoneReg);
     } else if (fieldName === 'name') {
       return name.trim() !== ''; 
     } else if (fieldName === 'msg') {
       return msg.trim() !== '';
     }
-  } 
+  }, [name, email, msg]);
 
   useEffect(() => {
     if (initialRender.current.name) {
@@ -53,7 +52,7 @@ export default function Contact() {
 
     errName.current.style.display = validate('name')? 'none': 'block';
 
-  }, [name]);
+  }, [name, validate]);
 
   useEffect(() => {
     if (initialRender.current.email) {
@@ -63,7 +62,7 @@ export default function Contact() {
 
     errEmail.current.style.display = validate('email')? 'none': 'block';
 
-  }, [email]);
+  }, [email, validate]);
 
   useEffect(() => {
     if (initialRender.current.msg) {
@@ -73,7 +72,7 @@ export default function Contact() {
 
     errMsg.current.style.display = validate('msg')? 'none': 'block';
 
-  }, [msg]);
+  }, [msg, validate]);
 
   const submit = () => {
     errName.current.style.display = validate('name')? 'none': 'block';
