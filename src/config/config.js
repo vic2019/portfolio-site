@@ -1,0 +1,1 @@
+export const MESSAGE_URI = 'https://gjd5p9r2tf.execute-api.us-west-2.amazonaws.com/default'
