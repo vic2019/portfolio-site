@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import icon from './images/nav-icon.png';
 import { useSpring, animated } from 'react-spring';
+import navIcon from '../images/nav-icon.png';
 
 
 function NavCollapsible ({ isOpen, toggle }) {
@@ -53,7 +53,7 @@ function NavToggle({ toggle }) {
   
   return (
     <div className='nav-toggle' onClick={toggle}>
-      <img className='nav-icon' src={icon} alt='Menu'/>
+      <img className='nav-icon' src={navIcon} alt=''/>
     </div>
   );
 }

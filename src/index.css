@@ -51,7 +51,7 @@ code {
   position: absolute; /* z-index only works on positioned items */
   height: 208px;
   width: 208px;
-  border-radius: 104px;
+  border-radius: 50%;
   margin-top: 6px;
   margin-left: 6px;
 }
