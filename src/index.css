@@ -33,7 +33,7 @@ code {
 .greeting {
   position: fixed;
   color: white;
-  font-size: 50px;
+  font-size: 40px;
   text-align: center;
 }
 
@@ -65,11 +65,11 @@ code {
 
 .bio-pic {
   position: absolute; /* z-index only works on positioned items */
-  height: 208px;
-  width: 208px;
+  height: 204px;
+  width: 204px;
   border-radius: 50%;
-  margin-top: 6px;
-  margin-left: 6px;
+  margin-top: 8px;
+  margin-left: 8px;
 }
 
 .bio-container {
@@ -238,7 +238,7 @@ code {
   }
 
   .greeting {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .bio-container {
