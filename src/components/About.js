@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import bioPic from '../images/bio-pic.jpeg';
 import cat from '../images/cat.jpeg';
 import laptopPic from '../images/laptop3.jpeg';
-import resume from '../resources/Resume Victor Wang.pdf';
+import resume from '../resources/Resume_Victor_Wang.pdf';
 import { useSpring, animated } from 'react-spring';
 
 const imgSRCs = [bioPic, laptopPic, cat];
@@ -50,7 +50,7 @@ export default function About() {
       </div>
       <div className='bio-container'>
         <p>
-          Hello, I am a self-taught web developer seeking work in a junior developer role. See my 
+          I am an aspiring web developer seeking work in a junior developer role. See my 
           <a 
             href={resume}
             rel='noopener noreferrer' 

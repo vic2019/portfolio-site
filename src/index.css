@@ -35,18 +35,18 @@ code {
   justify-content: center;
 }
 
-.greeting {
+#greeting {
   position: fixed;
   color: white;
   font-size: 40px;
   text-align: center;
 }
 
-.greeting p {
+#greeting p {
   position: relative;
 }
 
-.greeting span {
+#greeting span {
   color: #ff0082;
 }
 
@@ -271,7 +271,7 @@ code {
     left: 15px;
   }
 
-  .greeting {
+  #greeting {
     font-size: 26px;
   }
 
