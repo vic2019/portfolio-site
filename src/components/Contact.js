@@ -33,8 +33,10 @@ export default function Contact() {
     }
   }
 
-  const handleFocus = e => {
-    const scroll = window.pageYOffset + e.target.getBoundingClientRect().top;
+  const handleFocus = () => {
+    const scroll = window.pageYOffset + 
+      document.getElementsByClassName('contact-form-name')[0]
+      .getBoundingClientRect().top;
     setTimeout(() => window.scrollTo(0, scroll), 0);
       
   }

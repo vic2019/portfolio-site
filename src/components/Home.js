@@ -3,15 +3,13 @@ import { useSpring, animated } from 'react-spring';
 import { useGesture } from 'react-use-gesture';
 
 const trigger = window.innerHeight * 0.4;
-window.scrollTo(0, 0);
-
 
 export default function Home() {
   const [{ opacity, bottom, visibility }, set] = useSpring(() => ({ 
-    to: {opacity: 1, bottom: '0vh'},
-    from: {opacity: 0, bottom: '50vh', visibility: 'visible'},
+    to: { opacity: 1, bottom: '0vh', visibility: window.pageYOffset <= trigger? 1:0 },
+    from: { opacity: 0, bottom: '50vh', visibility: 'visible' },
     config: { friction: 20, mass: 2 },
-    delay: 600,
+    delay: 500,
   }));
 
   const bind = useGesture(

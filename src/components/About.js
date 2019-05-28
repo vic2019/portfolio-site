@@ -1,13 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
-import bioPic from '../images/bio-pic.png';
-import cat from '../images/cat.png';
-import laptop1 from '../images/laptop1.png';
-import laptop2 from '../images/laptop2.png';
-import laptop3 from '../images/laptop3.png';
+import React, { useState, useEffect } from 'react';
+import bioPic from '../images/bio-pic.jpeg';
+import cat from '../images/cat.jpeg';
+import laptopPic from '../images/laptop3.jpeg';
 import resume from '../resources/Resume Victor Wang.pdf';
 import { useSpring, animated } from 'react-spring';
 
-const imgSRCs = [bioPic, laptop2, cat];
+const imgSRCs = [bioPic, laptopPic, cat];
 
 export default function About() {
   const [turned, set] = useState(0);
@@ -17,13 +15,18 @@ export default function About() {
     config: { mass: 5, tension: 500, friction: 80 }
   })
 
-  useEffect(() => {
+  const setBioPic = () => {
     setTimeout(() => {
-      new Promise(resolve => resolve(set(turned + 1)))
-        .then(() => document.getElementById(`img-${(turned - 1) % 2}`).src 
-          = imgSRCs[(turned + 1) % 3]);
-    }, 1800);
-  }, [turned]);
+      new Promise(resolve => void resolve(set(turned + 1)))
+        .then(() => {
+          const imgObj = document.getElementById(`img-${(turned - 1) % 2}`);
+          if (!imgObj) return;
+          imgObj.src = imgSRCs[(turned + 1) % 3];
+        });
+    }, 2200);
+  }
+
+  useEffect(setBioPic, [turned]);
 
   return (
     <div id='about'>
@@ -46,20 +49,37 @@ export default function About() {
         />
       </div>
       <div className='bio-container'>
-        <p>I am a self-taught developer (in training) seeking a junior developer position. <a 
-          href={resume}
-          rel='noopener noreferrer' 
-          target='_blank' 
-          style={{textDecoration: 'none', color: '#3f3fff', fontFamily: ['Calibri', 'Arial'], fontWeight: 'bold'}}
-        >(Resume)</a></p>
-        <p>Technologies that I’ve worked with—</p>
+        <p>
+          Hello, I am a self-taught web developer seeking work in a junior developer role. See my 
+          <a 
+            href={resume}
+            rel='noopener noreferrer' 
+            target='_blank' 
+            style={{textDecoration: 'none', color: '#3f3fff', 
+              fontWeight: 'bold'}}
+          > resume</a>.
+        </p>
+        <p>Technologies I’ve worked with—</p>
         <ul>
-          <li>Front-end: <b>HTML</b>, <b>CSS</b>, <b>Javascript</b>, <b>React</b>, <b>Redux</b>, <b>react-spring</b>, <b>Jest</b></li>
-          <li>Back-end: <b>Node.js</b>, <b>MySQL</b>, <b>AWS (Lambda, DynamoDB, CloudFront, Cognito, SES, SNS, etc.)</b></li>
+          <li>
+            Frontend: <b>HTML</b>, <b>CSS</b>, <b>Javascript</b>, <b>jQuery</b>, <b>React</b>, <b>Redux</b>, <b>react-spring</b>, <b>Jest</b>
+          </li>
+          <li>
+            Backend: <b>Node.js</b>, <b>Python</b>, <b>MySQL</b>, <b>AWS (Lambda, API Gateway, DynamoDB/NoSQL, Route 53, CloudFront, Cognito, SNS, etc)</b>
+          </li>
         </ul>
-        <p>In July 2018, I stumbled upon "<i>Automate the Boring Stuff with Python</i>" by Al Sweigart, and was immediately hooked.</p>
-        <p>At the time I was working to become an attorney in California, but as I delved deeper into computer programming, my passion for coding grew until it dawned on me that I must turn this hobby into a career!</p> 
-        <p>I love building things, and I’m committed to continually learning and improving the quality of my work to exceed expectations. Please check out my projects!</p>
+        <p>
+          In summer 2018, I stumbled upon <i>Automate the Boring Stuff with Python</i> by Al Sweigart, and was immediately hooked. I downloaded an IDE and began playing with it. Before long, I would find myself on Stack Overflow looking for a solution to problems that would not have made any sense to me a mere few months ago. The experience was exhilarating. Eventually, I was drawn to web applications as it is an easy medium to create interactive programs and share it with others.
+        </p>
+        <p>
+          At the time I was working to become an attorney in California, but as I delved deeper into computer programming, my passion for coding grew until it dawned on me that I must turn this hobby into a career!
+        </p> 
+        <p>
+          I love building things, and I’m committed to continually learning and improving the quality of my work to exceed expectations. Please check out my projects! And let me know what I can do for you.
+        </p>
+        <p>
+          Thanks!
+        </p>
       </div>
     </div>
   );
