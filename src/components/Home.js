@@ -13,8 +13,8 @@ export default function Home() {
     delay: 500,
     onStart: () => {
       if (initial.current) {
-        initial.current = false;
         window.scrollTo(0, 0);
+        initial.current = false;
       }
     }
   }));

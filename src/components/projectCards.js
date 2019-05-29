@@ -93,10 +93,10 @@ export function Portfolio() {
         Animation was done with react-spring. I did not use any other UI library.
       </p>
       <p>
-        Messages sent through the contact form below will be forwarded to me through email and SMS message. 
+        Messages sent through the contact form below are configured to be forwarded to me through SMS message and email. 
       </p>
       <p>
-        So, shoot me a message? Feedback and criticism are apprecaited! 
+        So, leave a message? Tell me what I can do better. Your feedback is apprecaited! 
       </p>
       <p><a 
         href='https://github.com/vic2019/portfolio-site'
@@ -110,7 +110,7 @@ export function Portfolio() {
 }
 
 export const projectCards = [
-  Dictionary(),
-  Calendar(),
-  Portfolio()
+  Dictionary,
+  Calendar,
+  Portfolio
 ];

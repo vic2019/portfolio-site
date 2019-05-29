@@ -61,7 +61,7 @@ export default function Contact() {
 
     errName.current.style.display = validate('name')? 'none': 'block';
 
-  }, [name]);
+  }, [name, validate]);
 
   useEffect(() => {
     if (initialRender.current.email) {
@@ -71,7 +71,7 @@ export default function Contact() {
 
     errEmail.current.style.display = validate('email')? 'none': 'block';
 
-  }, [email]);
+  }, [email, validate]);
 
   useEffect(() => {
     if (initialRender.current.msg) {
@@ -81,7 +81,7 @@ export default function Contact() {
 
     errMsg.current.style.display = validate('msg')? 'none': 'block';
 
-  }, [msg]);
+  }, [msg, validate]);
 
   const submit = () => {
     errName.current.style.display = validate('name')? 'none': 'block';

@@ -69,10 +69,10 @@ export default function About() {
           </li>
         </ul>
         <p>
-          In August 2018, I stumbled upon <i>Automate the Boring Stuff with Python</i> by Al Sweigart, and was immediately hooked. I downloaded an IDE and began playing with it. Before long, I would find myself on Stack Overflow looking for a solution to problems that would not have made any sense to me a mere few months ago. The experience was exhilarating. Eventually, I was drawn to web applications as it is an easy medium to create interactive programs and share it with others.
+          In August 2018, I stumbled upon <i>Automate the Boring Stuff with Python</i> by Al Sweigart, and was immediately hooked. I downloaded an IDE and began playing with it. Before long, I would find myself on Stack Overflow looking for a solution to problems that would not have made any sense to me a mere few months ago. The experience was exhilarating. Soon, I was drawn to web application as it is a versatile medium to create useful or amusing programs to share with others.
         </p>
         <p>
-          At the time I was working to become an attorney in California, but as I delved deeper into computer programming, my passion for coding grew until it dawned on me that I must turn this hobby into a career!
+          At that time I was working toward an attorney's license in California, but as I delved deeper into web development, my passion for coding grew until it dawned on me that I must turn this hobby into a career!
         </p> 
         <p>
           I love building things, and I’m committed to continually learning and improving the quality of my work to exceed expectations. Please check out my projects! And let me know what I can do for you.
