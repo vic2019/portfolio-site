@@ -154,12 +154,10 @@ export default function Contact() {
         />
         <p className='contact-err' ref={errMsg}>
           Message cannot be empty.</p>
-        <input
+        <p
           className='contact-form-btn'
-          type='button'
-          value='Send'
           onClick={submit}
-        />
+        >Send</p>
         <p className='contact-sent-notice' ref={sentNotice}/>
       </form>
     </div>

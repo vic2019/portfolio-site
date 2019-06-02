@@ -12,10 +12,10 @@ export function Dictionary() {
         alt=''
       />
       <p>
-        An intuitive dictionary browser extension with over 120 average dail­y users.
+        An dictionary browser extension with over 130 average dail­y users.
       </p>
       <p>
-        The extension is written with plain JavaScript using AJAX and AWS Lambda as a proxy to fetch data. It is being actively maintained and updated.
+        The extension is written with plain JavaScript using AJAX and AWS Lambda as a proxy to fetch data. It recursively maps XML data to HTML DOM elements for display, creates a bookmark folder for saved entries, and scans the folder to avoid duplicates.
       </p>
       <p><a 
         href='https://addons.mozilla.org/en-US/firefox/addon/learners-dictionary/'
@@ -87,16 +87,13 @@ export function Portfolio() {
         alt=''
       />
       <p>
-        This portfolio page that you're reading.
+        This portfolio page.
       </p>
       <p>
         Animation was done with react-spring. I did not use any other UI library.
       </p>
       <p>
-        Messages sent through the contact form below are configured to be forwarded to me through SMS message and email. 
-      </p>
-      <p>
-        So, leave a message? Tell me what I can do better. Your feedback is apprecaited! 
+        As an exercise, I used AWS lambda (Node.js) and SNS to forward any message submited in the contact form below to my cell phone. 
       </p>
       <p><a 
         href='https://github.com/vic2019/portfolio-site'

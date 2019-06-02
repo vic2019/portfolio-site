@@ -2,12 +2,12 @@ import React, { useEffect, useRef } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { useGesture } from 'react-use-gesture';
 
-const trigger = window.innerHeight * 0.4;
+const trigger = window.innerHeight * 0.45;
 
 export default function Home() {
   const initial = useRef(true);
   const [{ opacity, bottom, visibility }, set] = useSpring(() => ({ 
-    to: { opacity: 1, bottom: '2vh', visibility: 'visible' },
+    to: { opacity: 1, bottom: '3vh', visibility: 'visible' },
     from: { opacity: 0, bottom: '50vh', visibility: 'visible' },
     config: { friction: 20, mass: 2 },
     delay: 500,
@@ -23,17 +23,17 @@ export default function Home() {
     { onScroll: () => {
       if (window.pageYOffset < trigger) {
         set({
-          to: {opacity: 1, bottom: '2vh', visibility: 'visible'}, 
+          to: {opacity: 1, bottom: '3vh', visibility: 'visible'}, 
           // ^ visibility is required here
-          from: {opacity: 0, bottom: '27vh', visibility: 'visible'}
+          from: {opacity: 0, bottom: '30vh', visibility: 'visible'}
         });
       } else {
         set({
           to: [
-            {opacity: 0, bottom: '27vh', visibility: 'visible'}, 
+            {opacity: 0, bottom: '30vh', visibility: 'visible'}, 
             {visibility: 'hidden'}
           ],
-          from: {opacity: 1, bottom: '2vh', visibility: 'visible'},
+          from: {opacity: 1, bottom: '3vh', visibility: 'visible'},
           config: { clamp: true, friction: 0 }
         });
       }

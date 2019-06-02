@@ -1,1 +1,1 @@
-export const MESSAGE_URI = ''
+export const MESSAGE_URI = '';
