@@ -2,8 +2,9 @@ import React from 'react';
 import dictionaryPic from '../images/dictionary.png';
 import calendarPic from '../images/calendar.png';
 import portfolioPic from '../images/portfolio.png';
+import flickpicksPic from '../images/flickpicks.png';
 
-export function Dictionary() {
+function Dictionary() {
   return (
     <div className='project-card'>
       <img 
@@ -12,10 +13,13 @@ export function Dictionary() {
         alt=''
       />
       <p>
-        An dictionary browser extension with over 130 average dail­y users.
+        A dictionary browser extension: Users may look up words and bookmark them with a simple click. It has over 280 average dailly users.
       </p>
       <p>
-        The extension is written with plain JavaScript using AJAX and AWS Lambda as a proxy to fetch data. It recursively maps XML data to HTML DOM elements for display, creates a bookmark folder for saved entries, and scans the folder to avoid duplicates.
+        The extension is written in plain JavaScript and uses AJAX and AWS Lambda as a proxy to fetch data. 
+      </p>
+      <p>
+        It recursively maps XML data to HTML DOM elements for display, creates a bookmark folder for saved entries, and scans the folder to avoid duplicates.
       </p>
       <p><a 
         href='https://addons.mozilla.org/en-US/firefox/addon/learners-dictionary/'
@@ -42,7 +46,7 @@ export function Dictionary() {
   )
 }
 
-export function Calendar() {
+function Calendar() {
   return (
     <div className='project-card'>
       <img 
@@ -51,15 +55,16 @@ export function Calendar() {
         alt=''
       />
       <p>
-        A React web app deployed on AWS with 
-          <ul>
-            <li>Ant Design components,</li> 
-            <li>NoSQL database (DynamoDB),</li> 
-            <li>REST API,</li> 
-            <li>user authentication, and</li> 
-            <li>social media integration (through AWS Cognito)</li>
-          </ul>
+        A React web app that creates a personalized visual display of a user's lifespan (for fun and as a tool for self-reflection).
       </p>
+          <ul>
+            <li>Ant Design components</li> 
+            <li>Deployed on AWS S3 and CloudFront</li>
+            <li>NoSQL database (DynamoDB)</li>
+            <li>REST API through AWS API Gateway and Lambda</li> 
+            <li>User management through AWS Cognito 
+              (with social media login)</li>
+          </ul>
       <p><a 
         href='https://lifecalender.me/'
         rel='noopener noreferrer'
@@ -78,7 +83,44 @@ export function Calendar() {
   )
 }
 
-export function Portfolio() {
+function Flickpicks() {
+  return (
+    <div className='project-card'>
+      <img 
+        className='project-pic'
+        src={flickpicksPic}
+        alt=''
+      />
+      <p>
+        A React-Redux web app that allows users to discover movies by title, year, and genre. Users may save movies, tag them, and filter saved movies by tags.
+      </p>
+      <ul>
+        <li>Mobile first design</li>
+        <li>React, Redux, React-Router</li>
+        <li>Sharable URL for movie pages</li>
+        <li>Node.js/Express, Docker</li>
+        <li>This app uses the TMDb API</li>
+      </ul>
+      <p>This project is a work in progress and will be expanded in the future.</p>
+      <p><a 
+        href='http://flickpicks.victorwang.info/'
+        rel='noopener noreferrer'
+        target='_blank'
+      >
+        Demo
+      </a></p>
+      <p><a 
+        href='https://github.com/vic2019/flickpicks'
+        rel='noopener noreferrer'
+        target='_blank'
+      >
+        Source
+      </a></p>
+    </div>
+  )
+}
+
+function Portfolio() {
   return (
     <div className='project-card'>
       <img 
@@ -89,12 +131,10 @@ export function Portfolio() {
       <p>
         This portfolio page.
       </p>
-      <p>
-        Animation was done with react-spring. I did not use any other UI library.
-      </p>
-      <p>
-        As an exercise, I used AWS lambda (Node.js) and SNS to forward any message submited in the contact form below to my cell phone. 
-      </p>
+      <ul>
+        <li>Animation is done with react-spring</li>
+        <li>The contact form at the bottom forwards messages to me by email and text through AWS SES and SNS.</li>
+      </ul>
       <p><a 
         href='https://github.com/vic2019/portfolio-site'
         rel='noopener noreferrer'
@@ -108,6 +148,7 @@ export function Portfolio() {
 
 export const projectCards = [
   Dictionary,
+  Flickpicks,
   Calendar,
   Portfolio
 ];

@@ -2,7 +2,15 @@ import React, { useEffect, useRef } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { useGesture } from 'react-use-gesture';
 
-const trigger = window.innerHeight * 0.45;
+const trigger = window.innerHeight * 0.38;
+
+const arrowStyle = {
+  width: 0, 
+  height: 0, 
+  borderLeft: '11px solid transparent',
+  borderRight: '11px solid transparent', 
+  borderTop: '13px solid #fff'
+}
 
 export default function Home() {
   const initial = useRef(true);
@@ -18,6 +26,17 @@ export default function Home() {
       }
     }
   }));
+
+  const scrollDown = () => {
+    try {
+      window.scrollTo({
+        top: document.getElementById('about').offsetTop,
+        behavior: 'smooth'
+      });
+    } catch(err) {
+      window.scrollTo(0, document.getElementById('about').offsetTop);
+    }
+  }
 
   const bind = useGesture(
     { onScroll: () => {
@@ -46,9 +65,17 @@ export default function Home() {
   return ( 
     <div id='home'>
       <animated.div style={{opacity, visibility}} id='greeting'>
+        <div style={{height: '27vh'}}/>
         <animated.p style={{bottom}}>Hello, I'm <span>Victor Wang</span>.<br/>
         Welcome to my portfolio :)</animated.p>
+        <div style={{height: '20vh'}}/>
+        <animated.span 
+          className='arrow-down-button'
+          style={arrowStyle}
+          onClick={scrollDown}
+        />
       </animated.div>
+      
     </div>
   );
 }

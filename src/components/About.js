@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import bioPic from '../images/bio-pic.jpeg';
-import cat from '../images/cat.jpeg';
+import bioPic from '../images/bio-pic.png';
+import bioPic2 from '../images/bio-pic.jpeg';
 import laptopPic from '../images/laptop3.jpeg';
-import resume from '../resources/Resume_Victor_Wang.pdf';
+// import resume from '../resources/Resume_Victor_Wang.pdf';
 import { useSpring, animated } from 'react-spring';
 
-const imgSRCs = [bioPic, laptopPic, cat];
+const imgSRCs = [bioPic, bioPic2, laptopPic];
 
 export default function About() {
   const [turned, set] = useState(0);
@@ -50,20 +50,19 @@ export default function About() {
       </div>
       <div className='bio-container'>
         <p>
-          I am a full-stack web developer with a particular interest in modern JavaScript framework and the cloud. See my 
+          I am a software engineer and full-stack web developer with a particular interest in modern JavaScript framework and the cloud. See my resume on
           <a 
-            href={resume}
+            href='https://www.linkedin.com/in/victor-wang-software-engineer/'
             rel='noopener noreferrer' 
             target='_blank' 
-            style={{textDecoration: 'none', color: '#3f3fff', 
-              fontWeight: 'bold'}}
-          > resume</a>.
+            style={{textDecoration: 'none', color: '#3f3fff'}}
+          > LinkedIn</a>.
         </p>
         <p>
           I love building things and am committed to constantly learning and improving the quality of my work.
         </p>
         <p>
-        Check out my projects!
+        Please check out my projects!
         </p>
       </div>
     </div>

@@ -1,5 +1,5 @@
 :root {
-  --color-gray: #595959;
+  --color-gray: #505050;
   --color-contact-form-background: #154360;
 }
 
@@ -76,11 +76,12 @@ code {
   margin-top: 8px;
   margin-left: 8px;
   z-index: 1;
+  object-fit: cover;
 }
 
 .bio-container {
   min-height: 350px;
-  width: 620px;
+  width: 560px;
   max-width: 94%;
   padding: 150px 40px 40px 45px;
   margin-bottom: 50px;
@@ -92,7 +93,7 @@ code {
 
 .bio-container * {
   color: var(--color-gray);
-  font-size: 19px;
+  font-size: 17px;
   line-height: 1.5;
   margin-bottom: 13px;
 }
@@ -108,7 +109,7 @@ code {
 
 .project-container {
   width: 100%;
-  max-width: 1110px;
+  max-width: 900px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -119,7 +120,7 @@ code {
 
 .project-card {
   width: 340px;
-  min-height: 540px;
+  height: 590px;
   margin: 15px;
   border-radius: 3px;
   background-color: white;
@@ -130,10 +131,10 @@ code {
   align-items: stretch;
 }
 
-.project-card p {
+.project-card p, ul {
   color: var(--color-gray);
-  font-size: 18px;
-  line-height: 1.25;
+  font-size: 17px;
+  line-height: 1.3;
   margin: 0px 13px 9px 13px;
 }
 
@@ -310,3 +311,6 @@ code {
   }
 }
 
+.arrow-down-button:hover {
+  cursor: pointer;
+}
