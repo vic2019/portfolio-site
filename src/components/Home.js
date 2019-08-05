@@ -65,10 +65,10 @@ export default function Home() {
   return ( 
     <div id='home'>
       <animated.div style={{opacity, visibility}} id='greeting'>
-        <div style={{height: '27vh'}}/>
+        <div style={{height: '26vh'}}/>
         <animated.p style={{bottom}}>Hello, I'm <span>Victor Wang</span>.<br/>
         Welcome to my portfolio :)</animated.p>
-        <div style={{height: '20vh'}}/>
+        <div style={{height: '23vh'}}/>
         <animated.span 
           className='arrow-down-button'
           style={arrowStyle}
