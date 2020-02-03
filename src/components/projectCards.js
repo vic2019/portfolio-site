@@ -96,6 +96,7 @@ function Flickpicks() {
       </p>
       <ul>
         <li>Mobile first design</li>
+        <li>TypeScript, SCSS</li>
         <li>React, Redux, React-Router</li>
         <li>Sharable URL for movie pages</li>
         <li>Node.js/Express, Docker</li>

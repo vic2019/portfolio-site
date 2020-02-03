@@ -121,6 +121,7 @@ export default function Contact() {
       <hr style={{width: '90px', fontWeight: 'bold'}}/>
       <form className='contact-form'>
         <input 
+          id='contact-input-name'
           type='text' 
           className='contact-form-name' 
           name='name'
@@ -132,6 +133,7 @@ export default function Contact() {
         <p className='contact-err' ref={errName}>
           Please enter a name.</p>
         <input 
+          id='contact-input-email'
           type='text' 
           className='contact-form-email' 
           name='email'
@@ -143,6 +145,7 @@ export default function Contact() {
         <p className='contact-err' ref={errEmail}>
           Please enter a valid email or phone number.</p>
         <textarea 
+          id='contact-input-message'
           type='text' 
           className='contact-form-message' 
           name='msg'
